@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Laravel\Passport\HasApiTokens;
 
 /**
  * App\Models\User
@@ -34,7 +34,7 @@ use Laravel\Sanctum\HasApiTokens;
  */
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable, HasFactory;
     
     protected $guarded = ['id'];
 
@@ -46,4 +46,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
+    
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }
