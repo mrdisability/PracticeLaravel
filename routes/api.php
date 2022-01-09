@@ -31,6 +31,9 @@ Route::middleware(['auth:api'])->group(function () {
     Route::apiResource('roles', RoleController::class);
 });
 
+//Todos, dont need authentication 
+Route::apiResource('todos', \App\Http\Controllers\TodoController::class);
+
 //Route::get('users', [UserController::class, 'index']);
 //Route::get('users/{id}', [UserController::class, 'show']);
 //Route::post('users', [UserController::class, 'store']);
