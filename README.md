@@ -1,5 +1,5 @@
 # PracticeLaravel
 
-## Vuejs Todos frontend: https://github.com/thesamoanppprogrammer/VueTodos
+## Vuejs Todos (Frontend): https://github.com/thesamoanppprogrammer/VueTodos
 
 * Connecting to mysql (MAMP).
